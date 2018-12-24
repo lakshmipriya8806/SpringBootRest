@@ -1,5 +1,8 @@
 package com.priya;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,10 +12,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.priya.model.CountrieResponse;
 import com.priya.model.CountryModel;
+import com.priya.service.CountryService;
 
 @RestController
 public class CountryController {
+	
+	@Autowired
+	CountryService service;
 	
 	
 	/**
@@ -20,8 +28,10 @@ public class CountryController {
 	 * @return
 	 */
 	@GetMapping("/countries")
-	public String getCountries() {
-		return "hello";
+	public List<CountryModel> getCountries() {
+		List<CountryModel> model=service.getCountries();
+		
+		return model;
 	}
 	
 	
@@ -30,11 +40,15 @@ public class CountryController {
 	 * @param name
 	 * @return
 	 */
-	@GetMapping("/countriesbyName")
-	public String getCountrieByName(@RequestParam(name="name") String name) {
-		return "hello"+ name;
-	}
+
+	  @GetMapping("/countriesbyName")
+	   public List<CountryModel>getCountrieByName(@RequestParam(value="name",required=false) String name) {
+	    List<CountryModel> model=service.getCountriesByName(name); 
+	    return model; 
+	   }
+	 
 	
+		
 	/**
 	 * This method is for saving the new country
 	 * @param countryModel

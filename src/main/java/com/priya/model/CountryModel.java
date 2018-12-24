@@ -2,17 +2,9 @@ package com.priya.model;
 
 public class CountryModel {
 	
-	private int id;
-	
 	private String name;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	private String capital;	
 
 	public String getName() {
 		return name;
@@ -20,6 +12,14 @@ public class CountryModel {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCapital() {
+		return capital;
+	}
+
+	public void setCapital(String capital) {
+		this.capital = capital;
 	}
 	
 	
