@@ -9,4 +9,5 @@ Please check: https://sonarcloud.io/dashboard?id=lakshmipriya8806_SpringBootRest
 ## Spring Actuator end points
 
 http://localhost:8080/actuator/health
+
 http://localhost:8080/actuator/info
