@@ -1,4 +1,4 @@
-package com.priya.Exception;
+package com.priya.exception;
 
 public class CustomException extends Exception{
 	
