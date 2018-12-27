@@ -11,3 +11,7 @@ Please check: https://sonarcloud.io/dashboard?id=lakshmipriya8806_SpringBootRest
 http://localhost:8080/actuator/health
 
 http://localhost:8080/actuator/info
+
+## Swagger Link
+http://localhost:8080/swagger-ui.html
+
