@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.priya.entities.Employee;
-import com.priya.exception.CustomException;
+import com.priya.Exception.CustomException;
 import com.priya.service.EmployeeService;
 
 @RestController
