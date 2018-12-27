@@ -21,14 +21,14 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;	
 
-	@GetMapping("/employees")
+	@GetMapping("/api/employee/listemployees")
 	public List<Employee> getEmployees() {
 		List<Employee> listEmployee = employeeService.getAllEmployees();
 		
 		return listEmployee;
 	}
 	
-	@PostMapping("/saveEmployee")
+	@PostMapping("/api/employee/saveEmployee")
 	public List<Employee> saveEmployee(@RequestBody Employee employee) throws CustomException {
 		if(employee.getId()>0) {
 			throw new CustomException("Employee with id cannot be saved");
@@ -38,14 +38,14 @@ public class EmployeeController {
 		return getEmployees(); 
 	}
 	
-	@DeleteMapping("/deletEmployee")
+	@DeleteMapping("/api/employee/deletEmployee")
 	public List<Employee> deleteEmployee(@RequestParam(value="id",required=false) int id){
 		employeeService.deleteById(id);		 
 		return getEmployees();
 		
 	}
 
-	@PutMapping("/updateEmployee")
+	@PutMapping("/api/employee/updateEmployee")
 	public List<Employee> updateEmployee(@RequestBody Employee employee){
 		if(employee.getId()!=0) {
 		employeeService.save(employee);

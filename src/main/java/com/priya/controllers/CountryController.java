@@ -25,7 +25,7 @@ public class CountryController {
 	 * This method gets the list of countries
 	 * @return
 	 */
-	@GetMapping("/countries")
+	@GetMapping("/api/countries")
 	public List<CountryModel> getCountries() {
 		List<CountryModel> model=service.getCountries();
 		
@@ -39,7 +39,7 @@ public class CountryController {
 	 * @return
 	 */
 
-	  @GetMapping("/countriesbyName")
+	  @GetMapping("/api/countriesbyName")
 	   public List<CountryModel>getCountrieByName(@RequestParam(value="name",required=false) String name) {
 	    List<CountryModel> model=service.getCountriesByName(name); 
 	    return model; 
@@ -52,7 +52,7 @@ public class CountryController {
 	 * @param countryModel
 	 * @return
 	 */
-	@PostMapping("/countries")
+	@PostMapping("/api/countries")
 	public CountryModel postCountries(@RequestBody CountryModel countryModel) {
 		
 		return countryModel;
@@ -63,7 +63,7 @@ public class CountryController {
 	 * @param countryModel
 	 * @return
 	 */
-	@PutMapping("/countries")
+	@PutMapping("/api/countries")
 	public CountryModel updateCountry(@RequestBody CountryModel countryModel) {
 		
 		return countryModel;
@@ -74,7 +74,7 @@ public class CountryController {
 	 * @param id
 	 * @return
 	 */
-	@DeleteMapping("/countries/{id}")
+	@DeleteMapping("/api/countries/{id}")
 	public String deleteCountry(@PathVariable(name="id") int id) {
 		return "Deleted Id : "+id;
 	}	
