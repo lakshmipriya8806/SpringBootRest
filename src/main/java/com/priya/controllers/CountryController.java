@@ -2,6 +2,8 @@ package com.priya.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,11 @@ import com.priya.model.CountryModel;
 import com.priya.service.CountryService;
 
 @RestController
+
 public class CountryController {
+	
+	//Default logging present in the SpringBoot-sl4j
+	public  Logger log=LoggerFactory.getLogger(Logger.class);
 	
 	@Autowired
 	CountryService service;
@@ -28,7 +34,11 @@ public class CountryController {
 	@GetMapping("/api/countries")
 	public List<CountryModel> getCountries() {
 		List<CountryModel> model=service.getCountries();
+			log.info("Countries are coming");
 		
+		if(model.isEmpty()) {
+			log.error("No countries are present");
+		}
 		return model;
 	}
 	

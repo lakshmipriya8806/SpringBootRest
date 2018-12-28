@@ -1,5 +1,8 @@
 package com.priya.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CountryModel {
 	
 	private String name;

@@ -59,6 +59,7 @@
 		    <version>${swagger.version}</version>
 		</dependency>
 		
+<!-- Swagger Dependancy for automatically documenting the rest urls and methods -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
 		    <artifactId>springfox-swagger-ui</artifactId>
@@ -68,9 +69,17 @@
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>		
+        </dependency>	
+        
+  <!-- Automatically restart the server when the files change -->   
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-devtools</artifactId>
+		<optional>true</optional>
+	</dependency>
+</dependencies>	
 
-	</dependencies>
+	
 
 	<build>
 		<plugins>

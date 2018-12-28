@@ -47,7 +47,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .username("user")
                 .password("password")
                 .roles("USER")
-                .build();
+                .build(); 
 
         return new InMemoryUserDetailsManager(user);
     }
