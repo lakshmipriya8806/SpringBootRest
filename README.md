@@ -15,3 +15,8 @@ http://localhost:8080/actuator/info
 ## Swagger Link
 http://localhost:8080/swagger-ui.html
 
+## Spring Security added
+userName:user and password:password
+
+## Log enabled
+
