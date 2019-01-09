@@ -1,12 +1,10 @@
 package com.priya.controllers;
 
-import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +22,7 @@ import com.priya.service.CountryService;
 public class CountryController {
 	
 	//Default logging present in the SpringBoot-sl4j
-	public  Logger log=LoggerFactory.getLogger(Logger.class);
+	public  Logger log=LoggerFactory.getLogger(CountryController.class);
 	
 	/*
 	 * @Scheduled(fixedDelay = 1000) public void printScheduled() { log.info(new
@@ -40,6 +38,11 @@ public class CountryController {
 	 */
 	@GetMapping("/api/countries")
 	public List<CountryModel> getCountries() {
+		log.trace("getCountries TRACE Message");
+		log.debug("getCountries DEBUG Message");
+		log.info("getCountries INFO Message");
+		log.warn("getCountries WARN Message");
+		log.error("getCountries ERROR Message");
 		List<CountryModel> model=service.getCountries();
 			log.info("Countries are coming");
 		
