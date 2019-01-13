@@ -27,7 +27,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
                 .antMatchers(
-                		"/"
+                		"/",
+                		"/api/employee/listemployees"      //Whitelisted the url for test in postmanUI
                 ).permitAll()
                 .anyRequest().authenticated()
                 .and()
